@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1v5b28q4*)*a#)()b_dn(t+(h(n6za7co6z8@4e0qy_y4lwgg1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG', 1)))
 
 ALLOWED_HOSTS = []
 
@@ -124,6 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT ='static/'
 
 REST_FRAMEWORK = {
     # 'DEFAULT_AUTHENTICATION_CLASSES': [
